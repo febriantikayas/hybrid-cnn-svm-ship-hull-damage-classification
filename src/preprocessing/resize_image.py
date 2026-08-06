@@ -15,12 +15,11 @@ def resize_images(input_folder, output_folder):
             try:
                 img = cv2.imread(input_image_path)
                 img_resized = cv2.resize(img, (224, 224)) 
-                cv2.imwrite(output_image_path, img_resized)
                 print(f"Berhasil mengubah ukuran '{filename}'")
             except Exception as e:
                 print(f"Gagal memproses '{filename}': {e}")
 
-input_folder = 'D:/SKRIPSI/dataset/data validasi'
-output_folder = 'D:/SKRIPSI/data_vald'
+input_folder = 
+output_folder = 
 
 resize_images(input_folder, output_folder)
