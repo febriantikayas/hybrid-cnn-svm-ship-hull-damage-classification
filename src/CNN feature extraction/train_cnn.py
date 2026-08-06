@@ -9,9 +9,9 @@ from tensorflow.keras.regularizers import l2
 tf.keras.backend.clear_session()
 import matplotlib.pyplot as plt
 
-OUT_DIR   = r"D:\SKRIPSI\hasil latih\model_cnn"
-TRAIN_DIR = r"D:\SKRIPSI\dataset_train"
-VAL_DIR   = r"D:\SKRIPSI\dataset_vald"
+OUT_DIR   = 
+TRAIN_DIR = 
+VAL_DIR   = 
 
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -62,11 +62,11 @@ model = Sequential([
 
 model.summary()
 
-early_stop = EarlyStopping(monitor='val_loss', patience=5, min_delta=0.001,
+early_stop = EarlyStopping(monitor='val_loss', patience=10, min_delta=0.1,
     restore_best_weights=True, verbose=2)
 
 checkpoint = ModelCheckpoint(
-    filepath=os.path.join(OUT_DIR, "best_model_baru.h5"), monitor='val_loss',
+    filepath=os.path.join(OUT_DIR, ""), monitor='val_loss',
     save_best_only=True, verbose=2)
 
 model.compile(
