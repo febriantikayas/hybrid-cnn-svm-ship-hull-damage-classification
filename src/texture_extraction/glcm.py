@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-GLCM_DISTANCES = [1, 2, 3]
+GLCM_DISTANCES = [1]
 GLCM_ANGLES = [0, np.pi/4, np.pi/2, 3*np.pi/4]  
 GLCM_LEVELS = 256 
 GLCM_FEATURES = ['contrast', 'correlation', 'energy', 'homogeneity']
@@ -76,9 +76,9 @@ def process_images_multi_class(
 
     label_mapping = {
     'karat': 0,
-    'pengelupasan_cat': 1,
-    'sambungan_las': 2,
-    'baik': 3}
+    '': 1,
+    '': 2,
+    '': 3}
     
     csv_columns = ['image_file', 'class']
     for feature_name in GLCM_FEATURES:
@@ -172,14 +172,10 @@ def process_images_multi_class(
 if __name__ == "__main__":
     
     CLASS_FOLDERS = {
-        'karat': r'D:\SKRIPSI\dataset_vald\\0 pelat karat',
-        'pengelupasan_cat': r'D:\SKRIPSI\dataset_vald\1 pelat pengelupasan cat',
-        'sambungan_las': r'D:\SKRIPSI\dataset_vald\2 pelat sambungan las',
-        'baik': r'D:\SKRIPSI\dataset_vald\3 pelat baik'
     }
     
-    OUTPUT_BASE_FOLDER = r'D:\SKRIPSI\hasil validasi\glcm\grayscale_vald'
-    OUTPUT_CSV_PATH = r'D:\SKRIPSI\hasil validasi\glcm\GLCM_fitur_valdidasi.csv'
+    OUTPUT_BASE_FOLDER = 
+    OUTPUT_CSV_PATH = 
     
     try:
         result = process_images_multi_class(
