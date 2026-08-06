@@ -57,7 +57,7 @@ def extract_hsv_features(img_path: str, mask_path: str) -> Tuple[np.ndarray, np.
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     idx = mask == 255
-    if not np.any(idx):
+    if not np.any():
         raise ValueError(f"Mask kosong di: {mask_path}")
 
     h = hsv[..., 0][idx]
