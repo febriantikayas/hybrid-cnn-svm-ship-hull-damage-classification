@@ -68,7 +68,7 @@ sample_file = train_df.iloc[idx]['image_file']
 
 print(f"\nContoh satu sampel: {sample_file} (Label: {sample_label})")
 
-formatted_features = ", ".join([f"{val:.6f}" for val in sample_features])
+formatted_features = ", ".join([f"{val:.6f}" for val in sample features])
 print("\nNilai fitur urut:")
 print(formatted_features)
 
@@ -115,8 +115,6 @@ y_pred = svm.predict(X_val_scaled)
 
 accuracy = accuracy_score(y_val, y_pred)
 print("\nAccuracy: {:.6f}%".format(accuracy * 100))
-
-cm = confusion_matrix(y_val, y_pred)
 
 plt.figure(figsize=(6,5))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
