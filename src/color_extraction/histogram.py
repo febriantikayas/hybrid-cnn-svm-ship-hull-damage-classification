@@ -212,19 +212,11 @@ def process_images_hsv_with_existing_masks(
     return stats
 
 if __name__ == "__main__":
-    CLASS_FOLDERS_RGB = {
-        'karat': r'D:/SKRIPSI/dataset_vald/0 pelat karat',
-        'pengelupasan_cat': r'D:/SKRIPSI/dataset_vald/1 pelat pengelupasan cat',
-        'sambungan_las': r'D:/SKRIPSI/dataset_vald/2 pelat sambungan las',
-        'baik': r'D:/SKRIPSI/dataset_vald/3 pelat baik'}
+    CLASS_FOLDERS_RGB = {}
 
-    CLASS_FOLDERS_MASK = {
-        'karat': r'D:\SKRIPSI\hasil validasi\closing\0 pelat karat',
-        'pengelupasan_cat': r'D:\SKRIPSI\hasil validasi\closing\1 pelat pengelupasan cat',
-        'sambungan_las': r'D:\SKRIPSI\hasil validasi\closing\2 pelat sambungan las',
-        'baik': r'D:\SKRIPSI\hasil validasi\closing\3 pelat baik'}
+    CLASS_FOLDERS_MASK = {}
 
-    OUTPUT_CSV_PATH = r'D:\SKRIPSI\hasil validasi\histogram\HSV_fitur_validasi.csv'
+    OUTPUT_CSV_PATH = 
 
     try:
         result = process_images_hsv_with_existing_masks(
