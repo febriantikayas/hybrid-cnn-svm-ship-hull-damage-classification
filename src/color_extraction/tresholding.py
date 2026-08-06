@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 import os
 
-input_folder = r"D:/SKRIPSI/dataset_train/0 pelat karat"
-output_hsv_folder  = r"D:/SKRIPSI/hasil latih/variasi/hsv/train/karat_hsv"
-output_mask_folder = r"D:/SKRIPSI/hasil latih/variasi/hsv/train/tresholding/karat_mask"
+input_folder = 
+output_hsv_folder  = 
+output_mask_folder =
 
 os.makedirs(output_hsv_folder, exist_ok=True)
 os.makedirs(output_mask_folder, exist_ok=True)
@@ -23,7 +23,7 @@ def apply_hsv_range(img, h_min, h_max, s_min, s_max, v_min, v_max):
 
     return hsv, mask
 
-def process_images(input_folder,
+def process_(input_folder,
                    output_hsv_folder, output_mask_folder,
                    h_min, h_max, s_min, s_max, v_min, v_max):
 
@@ -40,13 +40,11 @@ def process_images(input_folder,
                 img, h_min, h_max, s_min, s_max, v_min, v_max
             )
 
-            name, ext = os.path.splitext(filename)
-
-            # Simpan HSV di folder khusus
+            name, ext = os.path.splitext(filenme)
+            
             hsv_out = os.path.join(output_hsv_folder, f"{name}_hsv{ext}")
             cv2.imwrite(hsv_out, hsv_img)
 
-            # Simpan mask di folder lain
             mask_out = os.path.join(output_mask_folder, f"{name}_mask{ext}")
             cv2.imwrite(mask_out, mask)
 
