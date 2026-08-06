@@ -68,39 +68,30 @@ def closing(F, H):
 
 
 if __name__ == "__main__":
-    # Folder input dan output
-    input_dir = r"D:\SKRIPSI\hasil latih\variasi\hsv\train\tresholding\karat_mask" 
-    output_dir = r"D:\SKRIPSI\hasil latih\variasi\hsv\train\closing\0 pelat karat"  
+    input_dir = 
+    output_dir =  
 
     os.makedirs(output_dir, exist_ok=True)
 
-    # Structuring element
     H = np.ones((3, 3), dtype=np.uint8)
     pad = H.shape[0] // 2
 
-    # Ambil semua file gambar (sesuaikan ekstensi jika perlu)
     image_paths = glob(os.path.join(input_dir, "*.jpg"))
 
     for img_path in image_paths:
-        # Baca citra grayscale
         img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
         if img is None:
             print(f"Gagal baca: {img_path}")
             continue
-
-        # Binerisasi sederhana
+            
         BW = (img > 0).astype(np.uint8)
 
-        # Padding
         BWp = np.pad(BW, pad_width=pad, mode='constant', constant_values=0)
 
-        # Closing
         Gp = closing(BWp, H)
 
-        # Hapus padding
         G = Gp[pad:-pad, pad:-pad]
 
-        # Nama file output sama, tapi di folder output
         filename = os.path.basename(img_path)
         output_path = os.path.join(output_dir, filename)
         cv2.imwrite(output_path, G * 255)
